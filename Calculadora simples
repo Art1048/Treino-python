@@ -1,0 +1,71 @@
+H = []
+while True:
+    print('Opções:')
+    print('Digite \'add\' para somar 2 numeros')
+    print('Digite \'sub\' para subtrair 2 numeros')
+    print('Digite \'div\' para dividie 2 numeros')
+    print('Digite \'mult\' para multiplicar 2 numeros')
+    print('Digite \'pot\' para realizar uma potenciação')
+    print('Digite \'raiz\' para realizar uma raiz quadratica')
+    print('Digite \'sair\' para sair do programa')
+    i = input(':')
+    if i == 'sair':
+        print('Hitorico: ', H)
+        a = input('Digite y/n se vc quer ou não salvar o Historico de operações: ')
+        if a == 'n':
+            break
+        elif a == 'y':
+                    from datetime import date
+                    from time import strftime
+                    F = open("Historico_de_operações-" + str(date.today()) + '__' + str(strftime('%H-%M-%S')) + ".txt","w")
+                    F.write(str('Operações: \n{}'.format(H)))
+                    F.close()
+                    break
+    elif i == 'add':
+        num1 = float(input('Digite o primeiro numero: '))
+        Num2 = float(input('Digite o segundo numero: '))
+        soma = num1 + Num2
+        print('A soma resultante é :', soma)
+        f1 = str('{}+{}={}  \n'.format(num1, Num2, soma))
+        H.append(f1)
+        continue
+    elif i == 'sub':
+        num1 = float(input('Digite o primeiro numero: '))
+        Num2 = float(input('Digite o segundo numero: '))
+        sub = num1 - Num2
+        print('A subtração resultante é :', sub)
+        f2 =str('{}-{}={}  \n'.format(num1, Num2, sub))
+        H.append(f2)
+        continue
+    elif i == 'div':
+        num1 = float(input('Digite o primeiro numero: '))
+        Num2 = float(input('Digite o segundo numero: '))
+        div = num1 / Num2
+        print('A divisão resultante é :', div)
+        f3 = str('{}/{}={}  \n'.format(num1, Num2, div))
+        H.append(f3)
+        continue
+    elif i == 'mult':
+        num1 = float(input('Digite o primeiro numero: '))
+        Num2 = float(input('Digite o segundo numero: '))
+        mult = num1 * Num2
+        print('A multiplicação resultante é :', mult)
+        f4 =str('{}*{}={}  \n'.format(num1, Num2, mult))
+        H.append(f4)
+        continue
+    elif i == 'pot':
+        num1 = float(input('Digite a base da potencia: '))
+        Num2 = float(input('Digite o exponencial: '))
+        pot = num1 ** Num2
+        print('O resultado da potenciação é :', pot)
+        f5 =str('{} elevado a {} ={}  \n'.format(num1, Num2, pot))
+        H.append(f5)
+        continue
+    elif i == 'raiz':
+        from math import sqrt as raiz
+        num1 = float(input('Digite um numero: '))
+        r = raiz(num1)
+        print('O resultado da raiz quadrada é:', r)
+        f6 = str('Raiz quadrada de {} = {}  \n'.format(num1, r))
+        H.append(f6)
+        continue             
